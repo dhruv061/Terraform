@@ -1,0 +1,67 @@
+#----------------------------------------------For Provider---------------------------------------------#
+aws_profile = "default"
+aws_region  = "ap-south-1"
+
+#----------------------------------------------For VPC---------------------------------------------#
+vpc_cidr                               = "10.0.0.0/16"
+public_subnet_cidrs                    = ["10.0.0.0/18", "10.0.64.0/19", "10.0.96.0/19"]
+private_subnet_cidrs                   = ["10.0.128.0/18", "10.0.192.0/19", "10.0.224.0/19"]
+public_rt_destination_cidr_block       = "0.0.0.0/0"
+private_rt_destination_cidr_block      = "0.0.0.0/0"
+vpc_security_group_name                = "Dhruv-VPC-SG"
+vpc_security_group_description         = "SG for VPC"
+vpc_security_group_ingress_cidr_blocks = ["0.0.0.0/0"]
+
+#----------------------------------------------For EC2-SG---------------------------------------------#
+security_group_name                = "Dhruv-EC2-SG"
+security_group_description         = "Sg for EC2"
+security_group_ingress_cidr_blocks = ["0.0.0.0/0"]
+
+#----------------------------------------------For EC2---------------------------------------------#
+instance_type = "t2.micro"
+key_name = "dhruv-terraform"
+volume_size   = 20
+volume_type   = "gp3"
+ami_name      = "Dhruv-AMI-Terraform"
+#----------------------------------------------For TG creation---------------------------------------------#
+tg_name     = "Dhruv-TG"
+tg_port     = 80
+tg_protocol = "HTTP"
+#----------------------------------------------For TG Attachment---------------------------------------------#
+tg_attachment_port = 80
+target_type        = "instance"
+health_check = {
+  "timeout"             = "10"
+  "interval"            = "20"
+  "path"                = "/"
+  "port"                = "80"
+  "unhealthy_threshold" = "2"
+  "healthy_threshold"   = "3"
+}
+#----------------------------------------------For LB---------------------------------------------#
+lb_name            = "Dhruv-ALB"
+load_balancer_type = "application"
+#----------------------------------------------For LB Listener-------------------------------------#
+aws_lb_listener_port        = 80
+aws_lb_listener_protocol    = "HTTP"
+aws_lb_listener_action_type = "forward"
+
+#-----------------------------------------Lunch Template-----------------------------------------------------#
+lt_name          = "Dhruv-ASG-LT"
+lt_instance_type = "t2.micro"
+
+#-----------------------------------------------ASG-----------------------------------------------------#
+asg_name                 = "Dhruv-ASG"
+asg_availability_zones   = ["ap-south-1b", "ap-south-1a"]
+asg_desired_capacity     = 1
+asg_max_size             = 2
+asg_min_size             = 1  
+asg_health_check_type    = "EC2"
+asg_termination_policies = ["OldestInstance"]
+default_cooldown         = 3
+
+#-----------------------------------------------ASG Policy-----------------------------------------------------#
+asg_policy_name                   = "asg_policy"
+asg_policy_type                   = "TargetTrackingScaling"
+asg_policy_target_value           = 30
+asg_policy_predefined_metric_type = "ASGAverageCPUUtilization"
