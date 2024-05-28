@@ -22,7 +22,7 @@ eks_security_group_description         = "SG of EKS"
 eks_security_group_ingress_cidr_blocks = ["0.0.0.0/0"]
 
 #---------------------------------------------FOR EKS-----------------------------------------------------#
-cluster_name = "Dhruv-EKS"
+cluster_name = "Dhruv-EKS-Terraform"
 
 #---------------------------------------------FOR Node Group-----------------------------------------------------#
 node_group_name = "dhruv-node-group"
@@ -43,3 +43,4 @@ eks_addOn_vpc-cni = "vpc-cni"
 eks_addOn_kube-proxy = "kube-proxy"
 eks_addOn_eks-pod-identity-agent = "eks-pod-identity-agent"
 eks_addOn_coredns = "coredns"
+aws_ebs_csi_driver = "aws-ebs-csi-driver"

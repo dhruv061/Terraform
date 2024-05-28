@@ -134,3 +134,7 @@ variable "eks_addOn_eks-pod-identity-agent" {
 variable "eks_addOn_coredns" {
   type = string
 }
+
+variable "aws_ebs_csi_driver" {
+  type = string
+}

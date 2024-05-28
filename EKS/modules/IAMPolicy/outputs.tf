@@ -28,3 +28,6 @@ output "CloudWatchLogsFullAccess_ARN" {
   value = aws_iam_role_policy_attachment.CloudWatchLogsFullAccess.policy_arn
 }
 
+output "AmazonEBSCSIDriverPolicy_ARN" {
+  value = aws_iam_role_policy_attachment.AmazonEKSWorkerNodePolicy.policy_arn
+}

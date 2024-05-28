@@ -63,3 +63,7 @@ resource "aws_iam_role_policy_attachment" "CloudWatchLogsFullAccess" {
   role       = aws_iam_role.AmazonEKSNodeRole.name
 }
 
+resource "aws_iam_role_policy_attachment" "AmazonEBSCSIDriverPolicy" {
+  policy_arn = data.aws_iam_policy.AmazonEBSCSIDriverPolicy.arn
+  role       = aws_iam_role.AmazonEKSNodeRole.name
+}

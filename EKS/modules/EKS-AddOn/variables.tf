@@ -18,3 +18,6 @@ variable "eks_addOn_coredns" {
   type = string
 }
 
+variable "eks_addOn_aws-ebs-csi-driver" {
+  type = string
+}

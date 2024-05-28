@@ -58,7 +58,7 @@ module "EKS-NG" {
   instance_types        = var.instance_types
   scaling_config        = var.scaling_config
   update_config         = var.update_config
-  ng_depends_on = [module.IAMPolicy.AmazonEKSWorkerNodePolicy_ARN, module.IAMPolicy.AmazonEKS_CNI_Policy_ARN, module.IAMPolicy.AmazonEC2ContainerRegistryReadOnly_ARN, module.IAMPolicy.CloudWatchLogsFullAccess_ARN]
+  ng_depends_on = [module.IAMPolicy.AmazonEKSWorkerNodePolicy_ARN, module.IAMPolicy.AmazonEKS_CNI_Policy_ARN, module.IAMPolicy.AmazonEC2ContainerRegistryReadOnly_ARN, module.IAMPolicy.CloudWatchLogsFullAccess_ARN, module.IAMPolicy.AmazonEBSCSIDriverPolicy_ARN]
 }
 
 #---------------------------------------EKS-AddOn----------------------------------------------------#
@@ -70,5 +70,6 @@ module "EKS-AddOn" {
   eks_addOn_kube-proxy = var.eks_addOn_kube-proxy
   eks_addOn_eks-pod-identity-agent = var.eks_addOn_eks-pod-identity-agent
   eks_addOn_coredns = var.eks_addOn_coredns
+  eks_addOn_aws-ebs-csi-driver = var.aws_ebs_csi_driver
 }
 

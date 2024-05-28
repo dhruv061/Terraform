@@ -22,3 +22,8 @@ resource "aws_eks_addon" "coredns" {
   addon_name   = var.eks_addOn_coredns
 }
 
+#Add-on: EBS Drive
+resource "aws_eks_addon" "aws-ebs-csi-driver" {
+  cluster_name = var.cluster_name
+  addon_name   = var.eks_addOn_aws-ebs-csi-driver
+}

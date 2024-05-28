@@ -25,3 +25,8 @@ data "aws_iam_policy" "CloudWatchLogsFullAccess" {
   name = "CloudWatchLogsFullAccess"
 }
 
+#Fetch AmazonEBSCSIDriverPolicy for EKS-NG
+data "aws_iam_policy" "AmazonEBSCSIDriverPolicy" {
+  name = "AmazonEBSCSIDriverPolicy"
+}
+
