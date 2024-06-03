@@ -1,0 +1,10 @@
+adminPassword: "1234"
+replicas: 1
+
+service:
+  name: service
+  type: NodePort
+  port: 80
+  targetPort: 3000
+  nodePort: 30036
+
