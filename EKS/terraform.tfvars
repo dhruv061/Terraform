@@ -8,24 +8,24 @@ public_subnet_cidrs                    = ["10.0.0.0/18", "10.0.64.0/19", "10.0.9
 private_subnet_cidrs                   = ["10.0.128.0/18", "10.0.192.0/19", "10.0.224.0/19"]
 public_rt_destination_cidr_block       = "0.0.0.0/0"
 private_rt_destination_cidr_block      = "0.0.0.0/0"
-vpc_security_group_name                = "Dhruv-VPC-SG"
+vpc_security_group_name                = "Test-VPC-SG"
 vpc_security_group_description         = "SG for VPC"
 vpc_security_group_ingress_cidr_blocks = ["0.0.0.0/0"]
 
 #----------------------------------------------For IAM Policy---------------------------------------------#
-eks_cluster_role_name = "Dhruv-EksClusterServiceRole"
-eks_node_group_name   = "Dhruv-AmazonEKSNodeRole"
+eks_cluster_role_name = "Test-EksClusterServiceRole"
+eks_node_group_name   = "Test-AmazonEKSNodeRole"
 
 #----------------------------------------------For EKS-SG---------------------------------------------#
-eks_security_group_name                = "Dhruv-EKS-SG"
+eks_security_group_name                = "Test-EKS-SG"
 eks_security_group_description         = "SG of EKS"
 eks_security_group_ingress_cidr_blocks = ["0.0.0.0/0"]
 
 #---------------------------------------------FOR EKS-----------------------------------------------------#
-cluster_name = "Dhruv-EKS-Terraform"
+cluster_name = "Test-EKS-Terraform"
 
 #---------------------------------------------FOR Node Group-----------------------------------------------------#
-node_group_name = "dhruv-node-group"
+node_group_name = "Test-node-group"
 capacity_type   = "ON_DEMAND"
 disk_size       = 20
 instance_types  = ["t2.small"]
