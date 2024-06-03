@@ -6,7 +6,7 @@
 - Create VPC using the long way we call all the blocks of code or all other things manually instead of using the terraform function. 
 
 ## EC2
-Create one EC2
+- Create one EC2
 
 ## EC2_Module_UserData
 - This follows the proper terraform folder structure and installed Apache inside ec2 after its lunch.
