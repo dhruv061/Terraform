@@ -176,6 +176,3 @@ variable "helm_chart_version" {
   type = string
 }
 
-variable "depends_of_monitoring" {
-  type = string
-}
