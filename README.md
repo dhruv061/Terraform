@@ -22,3 +22,23 @@
 
 ## ASG
 - Create one Autoscaling group. We created on EC2 and created AMI of that EC2. use this AMI to create an autoscaling group with LB, TG.
+
+## EKS
+- EKS craetion with all addon and NG.
+
+## Karpenter
+- Deploye karpenter in EKS for autoscaling.
+- After karpenter is deployed All the CRDS like (nodepool, ec2nodeclass) is installed manlly and test that cluster is autoscaled or not!
+
+## Grafana
+- This is install Grafana using helm chart and expose it using nodeport service so we can access using <ip>:<nodeport>.
+- This is only install grafana not any other things!!
+
+## Monitoring
+- Deployed grafana and promethues using one single helm chart name is "kube-prometheus-stack".
+- Grafana and promethius is both expose as nodeport service.
+- To modify values we first install "kube-prometheus-stack" locally to see values and after we can add values into our value file.
+- How to install helm chart localy is describe in the our terraform docs!
+- We also create storage class and claim it using PVC for grafana POD so if our Grafana pod is re-created then also data is remian same.
+
+
