@@ -34,11 +34,14 @@
 - This is install Grafana using helm chart and expose it using nodeport service so we can access using <ip>:<nodeport>.
 - This is only install grafana not any other things!!
 
-## Monitoring
+## Monitoring-Promethues
 - Deployed grafana and promethues using one single helm chart name is "kube-prometheus-stack".
 - Grafana and promethius is both expose as nodeport service.
 - To modify values we first install "kube-prometheus-stack" locally to see values and after we can add values into our value file.
 - How to install helm chart localy is describe in the our terraform docs!
 - We also create storage class and claim it using PVC for grafana POD so if our Grafana pod is re-created then also data is remian same.
 
+## Monitoring-Loki
+- Deploye Loki using "loki-stack" helm chart
+- We can seprate grafana that show loki logs by enbaling it's value to true in default value file BUT we can add this loki as extra data source in grfana that is installed using "kube-prometheus-stack"
 
