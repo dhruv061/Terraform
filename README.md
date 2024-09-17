@@ -24,8 +24,11 @@
 - Create one Autoscaling group. We created on EC2 and created AMI of that EC2. use this AMI to create an autoscaling group with LB, TG.
 
 ## EKS
-- EKS craetion with all addon and NG.
+- VPC + EKS craetion with all addon and NG.
 
+## EKS_Only
+- Only EKS craetion with all addon and NG.
+  
 ## Karpenter
 - Deploye karpenter in EKS for autoscaling.
 - After karpenter is deployed All the CRDS like (nodepool, ec2nodeclass) is installed manlly and test that cluster is autoscaled or not!
